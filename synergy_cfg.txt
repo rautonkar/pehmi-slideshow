@@ -1,0 +1,974 @@
+Synergy Configuration
+  Board "S7G2 PE-HMI1"
+  R7FS7G27H2A01CBD
+    part_number: R7FS7G27H2A01CBD
+    rom_size_bytes: 4194304
+    ram_size_bytes: 655360
+    data_flash_size_bytes: 65536
+    package_style: BGA
+    package_pins: 224
+    
+  S7G2
+    series: 7
+    
+  S7G2 Family
+    OFS0 register settings: Select fields below
+         IWDT Start Mode: IWDT is Disabled
+         IWDT Timeout Period: 2048 cycles
+         IWDT Dedicated Clock Frequency Divisor: 128
+         IWDT Window End Position:  0% (no window end position)
+         IWDT Window Start Position: 100% (no window start position)
+         IWDT Reset Interrupt Request Select: Reset is enabled
+         IWDT Stop Control: Stop counting when in Sleep, Snooze mode, or Software Standby
+         WDT Start Mode Select: Stop WDT after a reset (register-start mode)
+         WDT Timeout Period: 16384 cycles
+         WDT Clock Frequency Division Ratio: 128
+         WDT Window End Position:  0% (no window end position)
+         WDT Window Start Position: 100% (no window start position)
+         WDT Reset Interrupt Request: Reset
+         WDT Stop Control: Stop counting when entering Sleep mode
+    OFS1 register settings: Select fields below
+         Voltage Detection 0 Circuit Start: Voltage monitor 0 reset is disabled after reset
+         Voltage Detection 0 Level: 2.80 V
+         HOCO OScillation Enable: HOCO oscillation is disabled after reset
+    
+  Synergy Common
+    Main stack size (bytes): 0x1000
+    Process stack size (bytes): 0x1000
+    Heap size (bytes) - A minimum of 4K (0x1000) is required if standard library functions are to be used.: 0x1000
+    MCU Vcc (mV): 3300
+    Parameter checking: Enabled
+    Assert Failures: Return SSP_ERR_ASSERTION
+    Error Log: No Error Log
+    ID Code Mode: Unlocked (Ignore ID)
+    ID Code (32 Hex Characters): FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    
+  Clocks
+    XTAL 24000000Hz
+    PLL Src: XTAL
+    HOCO 20MHz
+    PLL Div /2
+    PLL Mul x16.0
+    Clock Src: PLL
+    ICLK Div /1
+    PCLKA Div /2
+    PCLKB Div /4
+    PCLKC Div /4
+    PCLKD Div /2
+    SDCLKout On
+    BCLK Div /2
+    BCK/2
+    UCLK Div /4
+    FCLK Div /4
+    
+  Pin Configurations
+    S7G2-PE-HMI.pincfg -> g_bsp_pin_cfg
+      AVCC0 P8 ADC_AVCC0 - - - - - - - 
+      AVCCUSBHS H13 USBHS0_AVCCUSBHS - - - - - - - 
+      AVSS0 N9 ADC_AVSS0 - - - - - - - 
+      AVSSUSBHS G14 USBHS0_AVSSUSBHS - - - - - - - 
+      P000 R12 ADC0_AN00 GPIO38 - - "Analog mode" - - "ADC0: AN00; CMP0: IVCMP2; IRQ0: IRQ06" 
+      P001 P11 GPIO GPIO6 - IRQ7-DS "Input mode" - - "ADC0: AN01; CMP0: IVCMP2; IRQ0: IRQ07" 
+      P002 N12 GPIO GPIO11 - IRQ8-DS "Input mode" - - "ADC0: AN02; CMP0: IVCMP2; IRQ0: IRQ08" 
+      P003 L10 - GPIO26 - - Disabled - - "ADC0: PGAVSS0" 
+      P004 M11 GPIO GPIO19 - IRQ9-DS "Input mode" - - "ADC1: AN00; CMP0: IVCMP2; IRQ0: IRQ09" 
+      P005 R11 ADC1_AN01 GPIO39 - - "Analog mode" - - "ADC1: AN01; CMP0: IVCMP2; IRQ0: IRQ10" 
+      P006 P10 - GPIO4 - - Disabled - - "ADC1: AN02; CMP0: IVCMP2; IRQ0: IRQ11" 
+      P007 L9 - GPIO28 - - Disabled - - "ADC1: PGAVSS0" 
+      P008 N11 GPIO GPIO12 - IRQ12-DS "Input mode" - None "ADC0: AN03; IRQ0: IRQ12" 
+      P009 R10 GPIO GPIO37 - IRQ13-DS "Input mode" - None "ADC0: AN04; IRQ0: IRQ13" 
+      P010 M10 GPIO GPIO20 - None "Output mode (Initial Low)" CMOS None "ADC1: AN03; IRQ0: IRQ14" 
+      P011 N10 GPIO GPIO9 - None "Output mode (Initial Low)" CMOS None "ADC1: AN04; IRQ0: IRQ15" 
+      P014 M9 ADC0_AN05 GPIO32 - - "Analog mode" - - "ADC0: AN05; ADC1: AN05; CMP0: IVREF3; DAC120: DA" 
+      P015 M8 GPIO GPIO31 - None "Output mode (Initial Low)" CMOS None "ADC0: AN06; ADC1: AN06; CMP0: IVCMP1; DAC121: DA; IRQ0: IRQ13" 
+      P100 R1 BUS0_D0_DQ0 External_Memory_Interface_D00__DQ00 High None "Peripheral mode" CMOS None "AGT0: AGTIO; BUS0: D0_DQ0; GLCDC0: LCD_EXTCLK; IIC1: SCL; IRQ0: IRQ02; KINT0: KRM0; POEG0: GTETRG; SCI0: RXD_MISO; SCI0: SCL; SCI1: SCK; SPI0: MISO" 
+      P101 P1 BUS0_D1_DQ1 External_Memory_Interface_D01__DQ01 High None "Peripheral mode" CMOS None "AGT0: AGTEE; BUS0: D1_DQ1; GLCDC0: LCD_CLK; IIC1: SDA; IRQ0: IRQ01; KINT0: KRM1; POEG1: GTETRG; SCI0: SDA; SCI0: TXD_MOSI; SCI1: CTS_RTS_SS; SPI0: MOSI" 
+      P102 N1 BUS0_D2_DQ2 External_Memory_Interface_D02__DQ02 High - "Peripheral mode" CMOS None "ADC0: ADTRG; AGT0: AGTO; BUS0: D2_DQ2; GLCDC0: LCD_TCON0; GPT2: GTIOCB; KINT0: KRM2; OPS0: GTOWLO; SCI0: SCK; SPI0: RSPCK" 
+      P103 N2 BUS0_D3_DQ3 External_Memory_Interface_D03__DQ03 High - "Peripheral mode" CMOS None "BUS0: D3_DQ3; GLCDC0: LCD_TCON1; GPT2: GTIOCA; KINT0: KRM3; OPS0: GTOWUP; SCI0: CTS_RTS_SS; SPI0: SSL0" 
+      P104 N3 BUS0_D4_DQ4 External_Memory_Interface_D04__DQ04 High None "Peripheral mode" CMOS None "BUS0: D4_DQ4; GLCDC0: LCD_TCON2; IRQ0: IRQ01; KINT0: KRM4; POEG1: GTETRG; SCI8: RXD_MISO; SCI8: SCL; SPI0: SSL1" 
+      P105 M3 BUS0_D5_DQ5 External_Memory_Interface_D05__DQ05 High None "Peripheral mode" CMOS None "BUS0: D5_DQ5; GLCDC0: LCD_TCON3; IRQ0: IRQ00; KINT0: KRM5; POEG0: GTETRG; SCI8: SDA; SCI8: TXD_MOSI; SPI0: SSL2" 
+      P106 L4 BUS0_D6_DQ6 External_Memory_Interface_D06__DQ06 High - "Peripheral mode" CMOS None "BUS0: D6_DQ6; GLCDC0: LCD_DATA00; GPT8: GTIOCB; KINT0: KRM6; SCI8: SCK; SPI0: SSL3" 
+      P107 K4 BUS0_D7_DQ7 External_Memory_Interface_D07__DQ07 High - "Peripheral mode" CMOS None "BUS0: D7_DQ7; GLCDC0: LCD_DATA01; GPT8: GTIOCA; KINT0: KRM7; SCI8: CTS_RTS_SS" 
+      P108 B2 DEBUG0_TMS JTAG_TMS Low - "Peripheral mode" CMOS None "DEBUG0: SWDIO; DEBUG0: TMS; GPT0: GTIOCB; SCI9: CTS_RTS_SS; SPI1: SSL0" 
+      P109 B1 DEBUG0_TDO JTAG_TDO Low - "Peripheral mode" CMOS None "CAN1: CTX; CGC0: CLKOUT; DEBUG0: SWO; DEBUG0: TDO; GPT1: GTIOCA; OPS0: GTOVUP; SCI9: SDA; SCI9: TXD_MOSI; SPI1: MOSI" 
+      P110 C2 DEBUG0_TDI JTAG_TDI Low None "Peripheral mode" CMOS None "CAN1: CRX; CMP0: VCOUT; DEBUG0: TDI; GPT1: GTIOCB; IRQ0: IRQ03; OPS0: GTOVLO; SCI2: CTS_RTS_SS; SCI9: RXD_MISO; SCI9: SCL; SPI1: MISO" 
+      P111 C1 BUS0_A05 External_Memory_Interface_A05 High None "Peripheral mode" CMOS None "BUS0: A05; GLCDC0: LCD_DATA12; GPT3: GTIOCA; IRQ0: IRQ04; SCI2: SCK; SCI9: SCK; SPI1: RSPCK" 
+      P112 C3 BUS0_A04 External_Memory_Interface_A04 High - "Peripheral mode" CMOS None "BUS0: A04; GLCDC0: LCD_DATA11; GPT3: GTIOCB; SCI2: SDA; SCI2: TXD_MOSI; SSI0: SSISCK" 
+      P113 D3 BUS0_A03 External_Memory_Interface_A03 High - "Peripheral mode" CMOS None "BUS0: A03; GLCDC0: LCD_DATA10; SCI2: RXD_MISO; SCI2: SCL; SSI0: SSIWS" 
+      P114 E4 BUS0_A02 External_Memory_Interface_A02 High - "Peripheral mode" CMOS None "BUS0: A02; GLCDC0: LCD_DATA09; SSI0: SSIRXD" 
+      P115 E3 BUS0_A01 External_Memory_Interface_A01 High - "Peripheral mode" CMOS None "BUS0: A01; GLCDC0: LCD_DATA08; SSI0: SSITXD" 
+      P200 B8 - - - - Disabled - - "IRQ0: NMI" 
+      P201 C8 - - - - Disabled - - - 
+      P202 A12 GPIO GPIO1 Low None "Output mode (Initial Low)" CMOS None "BUS0: WR1_BC1; CAN0: CRX; ETHERC0: ERXD2; GLCDC0: LCD_TCON3; GPT5: GTIOCB; IRQ0: IRQ03; SCI2: SCK; SCI9: RXD_MISO; SCI9: SCL; SDHI0: DAT6; SPI1: MISO" 
+      P203 B12 GPIO GPIO35 Low None "Output mode (Initial Low)" CMOS None "BUS0: A19; CAN0: CTX; CTSU0: TSCAP; ETHERC0: COL; GPT5: GTIOCA; IRQ0: IRQ02; SCI2: CTS_RTS_SS; SCI9: SDA; SCI9: TXD_MOSI; SDHI0: DAT5; SPI1: MOSI" 
+      P204 D11 USBFS0_OVRCURB USB_Full_Speed_USB0_OVRCURB Low - "Peripheral mode" CMOS None "AGT1: AGTIO; BUS0: A18; CAC0: CACREF; CTSU0: TS00; ETHERC0: RX_DV; GPT4: GTIOCB; IIC0: SCL; OPS0: GTIW; SCI4: SCK; SCI9: SCK; SDHI0: DAT4; SPI1: RSPCK; SSI1: SSISCK; USBFS0: OVRCURB" 
+      P205 C12 IIC1_SCL IIC1__Pin_Option_A_SCL1_A Medium None "Peripheral mode" CMOS None "AGT1: AGTO; BUS0: A16; CGC0: CLKOUT; CTSU0: TSCAP; ETHERC0: WOL; ETHERC0: WOL; GPT4: GTIOCA; IIC1: SCL; IRQ0: IRQ01; OPS0: GTIV; SCI4: SDA; SCI4: TXD_MOSI; SCI9: CTS_RTS_SS; SDHI0: DAT3; SPI1: SSL0; SSI1: SSIWS; USBFS0: OVRCURA" 
+      P206 G9 IIC1_SDA IIC1__Pin_Option_A_SDA1_A Medium None "Peripheral mode" CMOS None "BUS0: WAIT; CTSU0: TS01; ETHERC0: LINKSTA; ETHERC0: LINKSTA; IIC1: SDA; IRQ0: IRQ00; OPS0: GTIU; SCI4: RXD_MISO; SCI4: SCL; SDHI0: DAT2; SPI1: SSL1; SSI1: SSIDATA; USBFS0: VBUSEN" 
+      P207 C13 GPIO GPIO33 Low - "Output mode (Initial Low)" CMOS None "BUS0: A17; CTSU0: TS02; SPI1: SSL2" 
+      P212 H15 CGC0_EXTAL - - None "Peripheral mode" CMOS None "AGT1: AGTEE; CGC0: EXTAL; IRQ0: IRQ03; POEG3: GTETRG; SCI1: RXD_MISO; SCI1: SCL" 
+      P213 H14 GPIO GPIO3 - IRQ2 "Input mode" - None "ADC1: ADTRG; CGC0: XTAL; IRQ0: IRQ02; POEG2: GTETRG; SCI1: SDA; SCI1: TXD_MOSI" 
+      P300 F5 DEBUG0_TCK JTAG_TCK Low - "Peripheral mode" CMOS None "DEBUG0: SWCLK; DEBUG0: TCK; GPT0: GTIOCA; SPI1: SSL1" 
+      P301 B3 BUS0_A06 External_Memory_Interface_A06 High None "Peripheral mode" CMOS None "BUS0: A06; GLCDC0: LCD_DATA13; GPT4: GTIOCB; IRQ0: IRQ06; OPS0: GTOULO; SCI2: RXD_MISO; SCI2: SCL; SPI1: SSL2" 
+      P302 A2 BUS0_A07 External_Memory_Interface_A07 High None "Peripheral mode" CMOS None "BUS0: A07; GLCDC0: LCD_DATA14; GPT4: GTIOCA; IRQ0: IRQ05; OPS0: GTOUUP; SCI2: SDA; SCI2: TXD_MOSI; SPI1: SSL3" 
+      P303 A3 BUS0_A08 External_Memory_Interface_A08 High - "Peripheral mode" CMOS None "BUS0: A08; GLCDC0: LCD_DATA15; GPT7: GTIOCB" 
+      P304 C4 BUS0_A09 External_Memory_Interface_A09 High None "Peripheral mode" CMOS None "BUS0: A09; GLCDC0: LCD_DATA16; GPT7: GTIOCA; IRQ0: IRQ09; SCI6: RXD_MISO; SCI6: SCL" 
+      P305 D4 BUS0_A10 External_Memory_Interface_A10 High None "Peripheral mode" CMOS None "BUS0: A10; GLCDC0: LCD_DATA17; IRQ0: IRQ08; SCI6: SDA; SCI6: TXD_MOSI" 
+      P306 D5 BUS0_A11 External_Memory_Interface_A11 High - "Peripheral mode" CMOS None "BUS0: A11; GLCDC0: LCD_DATA18; SCI6: SCK" 
+      P307 D6 BUS0_A12 External_Memory_Interface_A12 High - "Peripheral mode" CMOS None "BUS0: A12; GLCDC0: LCD_DATA19; SCI6: CTS_RTS_SS" 
+      P308 D7 BUS0_A13 External_Memory_Interface_A13 High - "Peripheral mode" CMOS None "BUS0: A13; GLCDC0: LCD_DATA20" 
+      P309 C5 BUS0_A14 External_Memory_Interface_A14 High - "Peripheral mode" CMOS None "BUS0: A14; GLCDC0: LCD_DATA21" 
+      P310 C6 BUS0_A15 External_Memory_Interface_A15 High - "Peripheral mode" CMOS None "BUS0: A15; GLCDC0: LCD_DATA22" 
+      P311 C7 BUS0_CS2_RAS External_Memory_Interface_CS2__RAS High - "Peripheral mode" CMOS None "BUS0: CS2_RAS; GLCDC0: LCD_DATA23" 
+      P312 B6 BUS0_CS3_CAS External_Memory_Interface_CS3__CAS High - "Peripheral mode" CMOS None "BUS0: CS3_CAS" 
+      P313 E10 GLCDC0_LCD_TCON2 GLCD_Controller__Pin_Option_B_LCD_TCON2_B High - "Peripheral mode" CMOS None "BUS0: A20; ETHERC0: ERXD3; GLCDC0: LCD_TCON2; SDHI0: DAT7" 
+      P314 F9 GLCDC0_LCD_TCON1 GLCD_Controller__Pin_Option_B_LCD_TCON1_B High - "Peripheral mode" CMOS None "BUS0: A21; GLCDC0: LCD_TCON1" 
+      P315 C11 GLCDC0_LCD_TCON0 GLCD_Controller__Pin_Option_B_LCD_TCON0_B High - "Peripheral mode" CMOS None "BUS0: A22; GLCDC0: LCD_TCON0" 
+      P400 N13 SCI7_SCK SCI7_SCK7 - None "Peripheral mode" CMOS None "ADC1: ADTRG; ETHERC1: TX_CLK; GPT6: GTIOCA; IIC0: SCL; IRQ0: IRQ00; SCI4: SCK; SCI7: SCK; SSI: AUDIO_CLK" 
+      P401 P15 SCI7_TXD_MOSI SCI7_TXD7_SDA7_MOSI7 - None "Peripheral mode" CMOS None "CAN0: CTX; ETHERC0: MDC; ETHERC0: MDC; GPT6: GTIOCB; IIC0: SDA; IRQ0: IRQ05; POEG0: GTETRG; SCI4: CTS_RTS_SS; SCI7: SDA; SCI7: TXD_MOSI" 
+      P402 N14 SCI7_RXD_MISO SCI7_RXD7_SCL7_MISO7 Medium None "Peripheral mode" CMOS None "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; ETHERC0: MDIO; ETHERC0: MDIO; IRQ0: IRQ04; RTC0: RTCIC0; SCI7: RXD_MISO; SCI7: SCL" 
+      P403 N15 RMII_MDC Ethernet_Controller_1_RMII_ET1_MDC Medium - "Peripheral mode" CMOS None "AGT0: AGTIO; AGT1: AGTIO; ETHERC1: MDC; ETHERC1: MDC; GPT3: GTIOCA; PDC0: PIXD7; RTC0: RTCIC1; SCI7: CTS_RTS_SS; SSI0: SSISCK" 
+      P404 K10 RMII_MDIO Ethernet_Controller_1_RMII_ET1_MDIO Medium - "Peripheral mode" CMOS None "ETHERC1: MDIO; ETHERC1: MDIO; GPT3: GTIOCB; PDC0: PIXD6; RTC0: RTCIC2; SSI0: SSIWS" 
+      P405 M13 RMII_TXD_EN Ethernet_Controller_1_RMII_RMII1_TXD_EN High - "Peripheral mode" CMOS None "ETHERC1: TX_EN; ETHERC1: TXD_EN; GPT1: GTIOCA; PDC0: PIXD5; SSI0: SSITXD" 
+      P406 J9 RMII_TXD1 Ethernet_Controller_1_RMII_RMII1_TXD1 High - "Peripheral mode" CMOS None "ETHERC1: RX_ER; ETHERC1: TXD1; GPT1: GTIOCB; PDC0: PIXD4; SSI0: SSIRXD" 
+      P407 A15 USBFS0_VBUS USB_Full_Speed_USB0_VBUS Low - "Peripheral mode" CMOS None "ADC0: ADTRG; CTSU0: TS03; ETHERC0: EXOUT; ETHERC0: EXOUT; IIC0: SDA; RTC0: RTCOUT; SCI4: CTS_RTS_SS; SPI1: SSL3; USBFS0: VBUS" 
+      P408 B15 - - - - Disabled - - "CTSU0: TS04; ETHERC0: CRS; ETHERC0: CRS_DV; GPT10: GTIOCB; IRQ0: IRQ07; OPS0: GTOWLO; SCI3: RXD_MISO; SCI3: SCL; USBFS0: ID; USBHS0: ID" 
+      P409 C14 GPIO GPIO34 - IRQ6 "Input mode" - None "CTSU0: TS05; ETHERC0: RX_CLK; ETHERC0: RX_ER; GPT10: GTIOCA; IRQ0: IRQ06; OPS0: GTOWUP; SCI3: SDA; SCI3: TXD_MOSI; USBFS0: EXICEN; USBHS0: EXICEN" 
+      P410 C15 SPI0_MISO SPI0__Pin_Option_B_MISOA_B Medium None "Peripheral mode" CMOS None "AGT1: AGTOB; CTSU0: TS06; ETHERC0: ERXD0; ETHERC0: RXD1; GPT9: GTIOCB; IRQ0: IRQ05; OPS0: GTOVLO; SCI0: RXD_MISO; SCI0: SCL; SCI3: SCK; SDHI0: DAT1; SPI0: MISO" 
+      P411 D14 SPI0_MOSI SPI0__Pin_Option_B_MOSIA_B Medium None "Peripheral mode" CMOS None "AGT1: AGTOA; CTSU0: TS07; ETHERC0: ERXD1; ETHERC0: RXD0; GPT9: GTIOCA; IRQ0: IRQ04; OPS0: GTOVUP; SCI0: SDA; SCI0: TXD_MOSI; SCI3: CTS_RTS_SS; SDHI0: DAT0; SPI0: MOSI" 
+      P412 D13 SPI0_RSPCK SPI0__Pin_Option_B_RSPCKA_B Medium - "Peripheral mode" CMOS None "CTSU0: TS08; ETHERC0: ETXD0; ETHERC0: REF50CK; OPS0: GTOULO; SCI0: SCK; SDHI0: CMD; SPI0: RSPCK" 
+      P413 D12 SPI0_SSL0 SPI0__Pin_Option_B_SSLA0_B Medium - "Peripheral mode" CMOS None "CTSU0: TS09; ETHERC0: ETXD1; ETHERC0: TXD0; OPS0: GTOUUP; SCI0: CTS_RTS_SS; SDHI0: CLK; SPI0: SSL0" 
+      P414 E11 GPIO GPIO13 Low - "Output mode (Initial Low)" CMOS None "CTSU0: TS10; ETHERC0: RX_ER; ETHERC0: TXD1; SDHI0: WP; SPI0: SSL1" 
+      P415 E14 GPIO GPIO16 Low - "Output mode (Initial Low)" CMOS None "CTSU0: TS11; ETHERC0: TX_EN; ETHERC0: TXD_EN; SPI0: SSL2" 
+      P500 R4 SDHI1_CLK SD_MMC1_SD1CLK High - "Peripheral mode" CMOS None "ADC0: AN16; AGT0: AGTOA; CMP0: IVREF0; GPT11: GTIOCA; OPS0: GTIU; QSPI0: QSPCLK; SDHI1: CLK; USBFS0: VBUSEN" 
+      P501 N4 SDHI1_CMD SD_MMC1_SD1CMD High None "Peripheral mode" CMOS None "ADC1: AN16; AGT0: AGTOB; CMP0: IVREF1; GPT11: GTIOCB; IRQ0: IRQ11; OPS0: GTIV; QSPI0: QSSL; SCI5: SDA; SCI5: TXD_MOSI; SDHI1: CMD; USBFS0: OVRCURA" 
+      P502 N5 SDHI1_DAT0 SD_MMC1_SD1DAT0 High None "Peripheral mode" CMOS None "ADC0: AN17; CMP0: IVCMP0; GPT12: GTIOCA; IRQ0: IRQ12; OPS0: GTIW; QSPI0: QIO0; SCI5: RXD_MISO; SCI5: SCL; SDHI1: DAT0; USBFS0: OVRCURB" 
+      P503 P5 SDHI1_DAT1 SD_MMC1_SD1DAT1 High - "Peripheral mode" CMOS None "ADC1: AN17; GPT12: GTIOCB; POEG2: GTETRG; QSPI0: QIO1; SCI5: SCK; SCI6: CTS_RTS_SS; SDHI1: DAT1; USBFS0: EXICEN" 
+      P504 R5 SDHI1_DAT2 SD_MMC1_SD1DAT2 High - "Peripheral mode" CMOS None "ADC0: AN18; GPT13: GTIOCA; POEG3: GTETRG; QSPI0: QIO2; SCI5: CTS_RTS_SS; SCI6: SCK; SDHI1: DAT2; USBFS0: ID" 
+      P505 M5 SDHI1_DAT3 SD_MMC1_SD1DAT3 High None "Peripheral mode" CMOS None "ADC1: AN18; GPT13: GTIOCB; IRQ0: IRQ14; QSPI0: QIO3; SCI6: RXD_MISO; SCI6: SCL; SDHI1: DAT3" 
+      P506 M6 SDHI1_CD - High None "Peripheral mode" CMOS None "ADC0: AN19; IRQ0: IRQ15; SCI6: SDA; SCI6: TXD_MOSI; SDHI1: CD" 
+      P507 N6 SDHI1_WP SD_MMC1_SD1WP High - "Peripheral mode" CMOS None "ADC1: AN19; SCI5: CTS_RTS_SS; SDHI1: WP" 
+      P508 M7 GPIO GPIO30 Low - "Output mode (Initial Low)" CMOS None "ADC0: AN20; SCI5: SCK" 
+      P509 P6 SCI5_TXD_MOSI SCI5_TXD5_SDA5_MOSI5 Medium - "Peripheral mode" CMOS None "ADC1: AN20; SCI5: SDA; SCI5: TXD_MOSI" 
+      P510 N7 SCI5_RXD_MISO SCI5_RXD5_SCL5_MISO5 Medium - "Peripheral mode" CMOS None "ADC0: AN21; SCI5: RXD_MISO; SCI5: SCL" 
+      P511 R15 CAN1_CRX CAN1_CRX1 - None "Peripheral mode" CMOS None "CAN1: CRX; ETHERC1: TX_ER; GPT0: GTIOCB; IIC2: SDA; IRQ0: IRQ15; PDC0: PCKO; SCI4: RXD_MISO; SCI4: SCL" 
+      P512 R14 CAN1_CTX CAN1_CTX1 - None "Peripheral mode" CMOS None "CAN1: CTX; ETHERC1: ETXD2; GPT0: GTIOCA; IIC2: SCL; IRQ0: IRQ14; PDC0: VSYNC; SCI4: SDA; SCI4: TXD_MOSI" 
+      P513 P13 GLCDC0_LCD_DATA16 GLCD_Controller__Pin_Option_B_LCD_DATA16_B High - "Peripheral mode" CMOS None "ETHERC1: ETXD3; GLCDC0: LCD_DATA16" 
+      P514 P14 GPIO GPIO7 Low - "Output mode (Initial Low)" CMOS None "POEG1: GTETRG" 
+      P515 K9 GPIO GPIO24 Low - "Output mode (Initial Low)" CMOS None - 
+      P600 L3 - - - - Disabled - - "BUS0: RD; GLCDC0: LCD_DATA02" 
+      P601 L2 BUS0_WR_WR0_DQM0 External_Memory_Interface_WR_WR0__DQM0 High - "Peripheral mode" CMOS None "BUS0: WR_WR0_DQM0; GLCDC0: LCD_DATA03" 
+      P602 L1 BUS0_BCLK_SDCLK External_Memory_Interface_EBCLK__SDCLK High - "Peripheral mode" CMOS None "BUS0: BCLK_SDCLK; GLCDC0: LCD_DATA04" 
+      P603 K3 BUS0_D13_DQ13 External_Memory_Interface_D13__DQ13 High - "Peripheral mode" CMOS None "BUS0: D13_DQ13" 
+      P604 K2 BUS0_D12_DQ12 External_Memory_Interface_D12__DQ12 High - "Peripheral mode" CMOS None "BUS0: D12_DQ12" 
+      P605 K1 BUS0_D11_DQ11 External_Memory_Interface_D11__DQ11 High - "Peripheral mode" CMOS None "BUS0: D11_DQ11" 
+      P606 K6 GLCDC0_LCD_DATA03 GLCD_Controller__Pin_Option_B_LCD_DATA03_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA03" 
+      P607 K5 GLCDC0_LCD_DATA04 GLCD_Controller__Pin_Option_B_LCD_DATA04_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA04" 
+      P608 F4 BUS0_A00_BC0_DQM1 External_Memory_Interface_A00_BC0__A00_DQM1 High - "Peripheral mode" CMOS None "BUS0: A00_BC0_DQM1; GLCDC0: LCD_DATA07" 
+      P609 G4 BUS0_CS1_CKE External_Memory_Interface_CS1__CKE High - "Peripheral mode" CMOS None "BUS0: CS1_CKE; GLCDC0: LCD_DATA06" 
+      P610 E1 BUS0_CS0_WE External_Memory_Interface_CS0__WE High - "Peripheral mode" CMOS None "BUS0: CS0_WE; GLCDC0: LCD_DATA05" 
+      P611 E2 BUS0_SDCS External_Memory_Interface_SDCS High - "Peripheral mode" CMOS None "BUS0: SDCS" 
+      P612 F2 BUS0_D8_DQ8 External_Memory_Interface_D08__DQ08 High - "Peripheral mode" CMOS None "BUS0: D8_DQ8" 
+      P613 F3 BUS0_D9_DQ9 External_Memory_Interface_D09__DQ09 High - "Peripheral mode" CMOS None "BUS0: D9_DQ9" 
+      P614 F1 BUS0_D10_DQ10 External_Memory_Interface_D10__DQ10 High - "Peripheral mode" CMOS None "BUS0: D10_DQ10" 
+      P615 G8 GLCDC0_LCD_DATA10 GLCD_Controller__Pin_Option_B_LCD_DATA10_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA10" 
+      P700 M14 RMII_TXD0 Ethernet_Controller_1_RMII_RMII1_TXD0 High - "Peripheral mode" CMOS None "ETHERC1: ETXD1; ETHERC1: TXD0; GPT5: GTIOCA; PDC0: PIXD3" 
+      P701 M15 RMII_REF50CK Ethernet_Controller_1_RMII_REF50CK1 High - "Peripheral mode" CMOS None "ETHERC1: ETXD0; ETHERC1: REF50CK; GPT5: GTIOCB; PDC0: PIXD2" 
+      P702 K11 RMII_RXD0 Ethernet_Controller_1_RMII_RMII1_RXD0 High - "Peripheral mode" CMOS None "ETHERC1: ERXD1; ETHERC1: RXD0; GPT6: GTIOCA; PDC0: PIXD1" 
+      P703 J8 RMII_RXD1 Ethernet_Controller_1_RMII_RMII1_RXD1 High - "Peripheral mode" CMOS None "ETHERC1: ERXD0; ETHERC1: RXD1; GPT6: GTIOCB; PDC0: PIXD0" 
+      P704 J10 RMII_RX_ER Ethernet_Controller_1_RMII_RMII1_RX_ER High - "Peripheral mode" CMOS None "ETHERC1: RX_CLK; ETHERC1: RX_ER; PDC0: HSYNC" 
+      P705 L13 RMII_CRS_DV Ethernet_Controller_1_RMII_RMII1_CRS_DV High - "Peripheral mode" CMOS None "ETHERC1: CRS; ETHERC1: CRS_DV; PDC0: PIXCLK" 
+      P706 L14 GPIO GPIO29 Low None "Output mode (Initial Low)" CMOS None "IRQ0: IRQ07; SCI3: RXD_MISO; SCI3: SCL; USBHS0: OVRCURB" 
+      P707 L15 USBHS0_OVRCURA USB_High_Speed_USBHS_OVRCURA Low None "Peripheral mode" CMOS None "IRQ0: IRQ08; SCI3: SDA; SCI3: TXD_MOSI; USBHS0: OVRCURA" 
+      P708 D15 SCI1_RXD_MISO SCI1_RXD1_SCL1_MISO1 Medium None "Peripheral mode" CMOS None "CAC0: CACREF; CTSU0: TS12; ETHERC0: ETXD3; IRQ0: IRQ11; SCI1: RXD_MISO; SCI1: SCL; SPI0: SSL3" 
+      P709 E13 SCI1_TXD_MOSI SCI1_TXD1_SDA1_MOSI1 Medium None "Peripheral mode" CMOS None "CTSU0: TS13; ETHERC0: ETXD2; IRQ0: IRQ10; SCI1: SDA; SCI1: TXD_MOSI" 
+      P710 F10 SCI1_SCK SCI1_SCK1 High - "Peripheral mode" CMOS None "CTSU0: TS14; ETHERC0: TX_ER; SCI1: SCK" 
+      P711 E12 SCI1_CTS_RTS_SS SCI1_CTS1_RTS1_SS1 Medium - "Peripheral mode" CMOS None "CTSU0: TS15; ETHERC0: TX_CLK; SCI1: CTS_RTS_SS" 
+      P712 F11 - - - - Disabled - - "CTSU0: TS16; GPT2: GTIOCB" 
+      P713 G10 RMII_EXOUT Ethernet_Controller_1_RMII_ET1_EXOUT High - "Peripheral mode" CMOS None "CTSU0: TS17; ETHERC1: EXOUT; ETHERC1: EXOUT; GPT2: GTIOCA" 
+      P800 P2 BUS0_D14_DQ14 External_Memory_Interface_D14__DQ14 High - "Peripheral mode" CMOS None "BUS0: D14_DQ14" 
+      P801 R2 BUS0_D15_DQ15 External_Memory_Interface_D15__DQ15 High - "Peripheral mode" CMOS None "BUS0: D15_DQ15; SDHI1: DAT4" 
+      P802 R3 GLCDC0_LCD_DATA02 GLCD_Controller__Pin_Option_B_LCD_DATA02_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA02; SDHI1: DAT5" 
+      P803 P4 GLCDC0_LCD_DATA01 GLCD_Controller__Pin_Option_B_LCD_DATA01_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA01; SDHI1: DAT6" 
+      P804 M4 GLCDC0_LCD_DATA00 GLCD_Controller__Pin_Option_B_LCD_DATA00_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA00; SDHI1: DAT7" 
+      P805 R13 GLCDC0_LCD_DATA17 GLCD_Controller__Pin_Option_B_LCD_DATA17_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA17" 
+      P806 M12 GPIO GPIO21 Low - "Output mode (Initial Low)" CMOS None "GLCDC0: LCD_EXTCLK" 
+      P807 P12 GPIO GPIO5 Low - "Output mode (Initial Low)" CMOS None - 
+      P808 K7 GPIO GPIO22 Low - "Output mode (Initial Low)" CMOS None - 
+      P809 K8 GPIO GPIO23 Low - "Output mode (Initial Low)" CMOS None - 
+      P810 P3 GPIO GPIO36 Low - "Output mode (Initial Low)" CMOS None - 
+      P811 L5 GPIO GPIO25 Low - "Output mode (Initial Low)" CMOS None "CAN0: CTX" 
+      P812 L6 GPIO GPIO27 Low - "Output mode (Initial Low)" CMOS None "CAN0: CRX" 
+      P813 G1 - - - - Disabled - - "GPT9: GTIOCB; TRACE0: TDATA3" 
+      P900 E9 GLCDC0_LCD_CLK GLCD_Controller__Pin_Option_B_LCD_CLK_B High - "Peripheral mode" CMOS None "BUS0: A23; GLCDC0: LCD_CLK" 
+      P901 B11 GLCDC0_LCD_DATA15 GLCD_Controller__Pin_Option_B_LCD_DATA15_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA15" 
+      P902 A11 GLCDC0_LCD_DATA23 GLCD_Controller__Pin_Option_B_LCD_DATA23_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA23" 
+      P903 D9 GPIO GPIO8 Low - "Output mode (Initial Low)" CMOS None "GPT7: GTIOCA; SDHI0: CD" 
+      P904 C9 GPIO GPIO2 Low - "Output mode (Initial Low)" CMOS None "GPT7: GTIOCB" 
+      P905 A6 GLCDC0_LCD_DATA11 GLCD_Controller__Pin_Option_B_LCD_DATA11_B High - "Peripheral mode" CMOS None "BUS0: CS4; GLCDC0: LCD_DATA11" 
+      P906 F6 GLCDC0_LCD_DATA12 GLCD_Controller__Pin_Option_B_LCD_DATA12_B High - "Peripheral mode" CMOS None "BUS0: CS5; GLCDC0: LCD_DATA12" 
+      P907 F7 GLCDC0_LCD_DATA13 GLCD_Controller__Pin_Option_B_LCD_DATA13_B High - "Peripheral mode" CMOS None "BUS0: CS6; GLCDC0: LCD_DATA13" 
+      P908 E7 GLCDC0_LCD_DATA14 GLCD_Controller__Pin_Option_B_LCD_DATA14_B High - "Peripheral mode" CMOS None "BUS0: CS7; GLCDC0: LCD_DATA14" 
+      P909 E8 GLCDC0_LCD_DATA21 GLCD_Controller__Pin_Option_B_LCD_DATA21_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA21" 
+      P910 D8 GLCDC0_LCD_DATA22 GLCD_Controller__Pin_Option_B_LCD_DATA22_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA22" 
+      P911 A7 - - - - Disabled - - "GPT8: GTIOCB" 
+      P912 B7 - - - - Disabled - - "GPT8: GTIOCA" 
+      P913 H8 - - - - Disabled - - - 
+      P914 E5 GLCDC0_LCD_DATA19 GLCD_Controller__Pin_Option_B_LCD_DATA19_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA19" 
+      P915 E6 GLCDC0_LCD_DATA20 GLCD_Controller__Pin_Option_B_LCD_DATA20_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA20" 
+      PA00 J7 GLCDC0_LCD_DATA05 GLCD_Controller__Pin_Option_B_LCD_DATA05_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA05" 
+      PA01 J6 GLCDC0_LCD_DATA06 GLCD_Controller__Pin_Option_B_LCD_DATA06_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA06" 
+      PA02 H6 GPIO GPIO10 Low None "Output mode (Initial Low)" CMOS None "IRQ0: IRQ10; SCI7: SDA; SCI7: TXD_MOSI" 
+      PA03 J5 GPIO GPIO18 Low None "Output mode (Initial Low)" CMOS None "IRQ0: IRQ09; SCI7: RXD_MISO; SCI7: SCL" 
+      PA04 J4 GPIO GPIO17 Low - "Output mode (Initial Low)" CMOS None "GPT11: GTIOCB; SCI7: SCK" 
+      PA05 J3 GPT11_GTIOCA GPT11__Pin_Option_B_GTIOC11A_B High - "Peripheral mode" CMOS None "GPT11: GTIOCA; SCI7: CTS_RTS_SS" 
+      PA06 J2 GPIO GPIO15 Low - "Output mode (Initial Low)" CMOS None "GPT10: GTIOCB" 
+      PA07 J1 GPIO GPIO14 Low - "Output mode (Initial Low)" CMOS None "GPT10: GTIOCA" 
+      PA08 G7 GLCDC0_LCD_DATA09 GLCD_Controller__Pin_Option_B_LCD_DATA09_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA09" 
+      PA09 H4 GLCDC0_LCD_DATA08 GLCD_Controller__Pin_Option_B_LCD_DATA08_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA08" 
+      PA10 H5 GLCDC0_LCD_DATA07 GLCD_Controller__Pin_Option_B_LCD_DATA07_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA07" 
+      PA11 G6 GLCDC0_LCD_DATA18 GLCD_Controller__Pin_Option_B_LCD_DATA18_B High - "Peripheral mode" CMOS None "GLCDC0: LCD_DATA18" 
+      PA12 G5 - - - - Disabled - - "TRACE0: TCLK" 
+      PA13 H7 - - - - Disabled - - "TRACE0: TDATA0" 
+      PA14 G3 - - - - Disabled - - "TRACE0: TDATA1" 
+      PA15 G2 - - - - Disabled - - "GPT9: GTIOCA; TRACE0: TDATA2" 
+      PB00 H9 USBHS0_VBUSEN USB_High_Speed_USBHS_VBUSEN Low - "Peripheral mode" CMOS None "SCI3: SCK; USBHS0: VBUSEN" 
+      PB01 K13 USBHS0_VBUS USB_High_Speed_USBHS_VBUS Low - "Peripheral mode" CMOS None "SCI3: CTS_RTS_SS; USBHS0: VBUS" 
+      PB02 J11 SCI8_CTS_RTS_SS SCI8_CTS8_RTS8_SS8 Medium - "Peripheral mode" CMOS None "ETHERC1: RX_DV; SCI8: CTS_RTS_SS" 
+      PB03 K12 SCI8_SCK SCI8_SCK8 High - "Peripheral mode" CMOS None "ETHERC1: COL; SCI8: SCK" 
+      PB04 H10 SCI8_TXD_MOSI SCI8_TXD8_SDA8_MOSI8 Medium None "Peripheral mode" CMOS None "ETHERC1: ERXD2; IRQ0: IRQ12; SCI8: SDA; SCI8: TXD_MOSI" 
+      PB05 J12 SCI8_RXD_MISO SCI8_RXD8_SCL8_MISO8 Medium None "Peripheral mode" CMOS None "ETHERC1: ERXD3; IRQ0: IRQ13; SCI8: RXD_MISO; SCI8: SCL" 
+      PB06 H11 GPIO - Low - "Output mode (Initial High)" CMOS None "ETHERC1: WOL; ETHERC1: WOL" 
+      PB07 G11 RMII_LINKSTA Ethernet_Controller_1_RMII_ET1_LINKSTA High - "Peripheral mode" CMOS None "ETHERC1: LINKSTA; ETHERC1: LINKSTA" 
+      PVSSUSBHS G15 USBHS0_PVSSUSBHS - - - - - - - 
+      RES F8 - - - - - - - - 
+      USBDM B14 USBFS0_USBDM - - - - - - - 
+      USBDP A14 USBFS0_USBDP - - - - - - - 
+      USBHSDM F15 USBHS0_USBHSDM - - - - - - - 
+      USBHSDP F14 USBHS0_USBHSDP - - - - - - - 
+      USBHSRREF G13 USBHS0_USBHSRREF - - - - - - - 
+      VBAT K14 - - - - - - - - 
+      VCC B4 - - - - - - - - 
+      VCC D10 - - - - - - - - 
+      VCC B5 - - - - - - - - 
+      VCC M2 - - - - - - - - 
+      VCC A8 - - - - - - - - 
+      VCC P7 - - - - - - - - 
+      VCC H12 - - - - - - - - 
+      VCC H3 - - - - - - - - 
+      VCC L7 - - - - - - - - 
+      VCC L12 - - - - - - - - 
+      VCC D1 - - - - - - - - 
+      VCCUSB A13 USBFS0_VCCUSB - - - - - - - 
+      VCCUSBHS F13 USBHS0_VCCUSBHS - - - - - - - 
+      VCL K15 - - - - - - - - 
+      VCL1 A10 - - - - - - - - 
+      VCL1 H1 - - - - - - - - 
+      VCL2 R6 - - - - - - - - 
+      VLO B9 - - - - - - - - 
+      VLO A9 - - - - - - - - 
+      VREFH R8 ADC_VREFH - - - - - - - 
+      VREFH0 R9 ADC_VREFH0 - - - - - - - 
+      VREFL N8 ADC_VREFL - - - - - - - 
+      VREFL0 P9 ADC_VREFL0 - - - - - - - 
+      VSS B10 - - - - - - - - 
+      VSS A4 - - - - - - - - 
+      VSS C10 - - - - - - - - 
+      VSS A5 - - - - - - - - 
+      VSS M1 - - - - - - - - 
+      VSS R7 - - - - - - - - 
+      VSS E15 - - - - - - - - 
+      VSS H2 - - - - - - - - 
+      VSS L8 - - - - - - - - 
+      VSS L11 - - - - - - - - 
+      VSS J13 - - - - - - - - 
+      VSS D2 - - - - - - - - 
+      VSS1USBHS F12 USBHS0_VSS1USBHS - - - - - - - 
+      VSS2USBHS G12 USBHS0_VSS2USBHS - - - - - - - 
+      VSSUSB B13 USBFS0_VSSUSB - - - - - - - 
+      XCIN J15 CGC0_XCIN - - - - - - - 
+      XCOUT J14 CGC0_XCOUT - - - - - - - 
+      
+  Module "CGC Driver on r_cgc"
+    Parameter Checking: Default (BSP)
+    Main Oscillator Wait Time: 2087 us (547 cycles)
+    Main Oscillator Clock Source: Crystal or Resonator
+    Subclock Drive: Standard (12.5pf)
+    Configure Subclock Drive On Reset: Enabled
+    Low Voltage Mode: Disable
+    
+  Module "ELC Driver on r_elc"
+    Parameter Checking: Default (BSP)
+    
+  Module "I/O Port Driver on r_ioport"
+    Parameter Checking: Default (BSP)
+    
+  Module "FMI Driver on r_fmi"
+    Parameter Checking: Default (BSP)
+    SSP MCU Information Symbol Name: g_fmi_data
+    Part Number Mask: 0xFE00
+    
+  Module "Touch Panel Framework on sf_touch_panel_i2c"
+    Parameter Checking: Default (BSP)
+    
+  Module "Messaging Framework on sf_message"
+    Parameter Checking: Default (BSP)
+    Message Queue Depth (Total number of messages to be enqueued in a Message Queue): 16
+    
+  Module "External IRQ Framework on sf_external_irq"
+    Parameter Checking: Default (BSP)
+    
+  Module "External IRQ Driver on r_icu"
+    Parameter Checking: Default (BSP)
+    
+  Module "I2C Master Driver on r_riic"
+    Parameter Checking: Default (BSP)
+    
+  Module "Transfer Driver on r_dtc"
+    Parameter Checking: Default (BSP)
+    Software Start: Disabled
+    Linker section to keep DTC vector table: .ssp_dtc_vector_table
+    
+  Module "Touch Panel Driver on touch_panel_ft5x06"
+  Module "GUIX on gx"
+    Enable Synergy 2D Drawing Engine Support: Yes(default)
+    Enable Synergy JPEG Support: Yes(default)
+    
+  Module "GUIX Port on sf_el_gx"
+    Parameter Checking: Default (BSP)
+    
+  Module "Display Driver on r_glcd"
+    Parameter Checking: Default (BSP)
+    
+  Module "JPEG Decode Framework on sf_jpeg_decode"
+    Parameter Checking: Default (BSP)
+    
+  Module "JPEG Decode Driver on r_jpeg_decode"
+    Parameter Checking: Default (BSP)
+    
+  Module "JPEG Common"
+  Module "D/AVE 2D Driver on dave2d"
+  Module "D/AVE 2D Port on sf_tes_2d_drw"
+    Work memory size for display lists in bytes: 32768
+    DRW Interrupt Priority: Priority 5
+    
+  Module "Timer Driver on r_gpt"
+    Parameter Checking: Default (BSP)
+    
+  Module "Block Media Framework on sf_block_media_sdmmc"
+    Parameter Checking: Default (BSP)
+    
+  Module "SD/MMC Driver on r_sdmmc"
+    Parameter Checking Enable: Default (BSP)
+    
+  Module "FileX on Block Media"
+  Module "FileX Port Block Media Framework on sf_el_fx"
+    Parameter Checking: Default (BSP)
+    
+  Module "FileX Common on fx"
+  Module "Transfer Driver on r_dmac"
+    Parameter Checking: Default (BSP)
+    
+  Module "USBX Device Class Mass Storage"
+  Module "USBX Device Configuration"
+  Module "USBX on ux"
+  Module "USBX Interface Configuration Mass Storage Class"
+  Module "USBX Port DCD on sf_el_ux for USBFS"
+    Full Speed Interrupt Priority: Priority 7
+    LDO Regulator(Only for S3 and S1 part MCUs): Disable
+    
+  Module "GUIX Source"
+    GUIX Stack Size: 
+    GUIX System Timer (Milliseconds): 
+    GUIX Timer Rate: 
+    GUIX Ticks per Second: 
+    Disable Multithread Support: No(default)
+    Disable UTF8 Support: No(default)
+    GUIX Event Queue Size: 
+    GUIX Thread Priority: 19
+    GUIX Thread Time Slice: 10
+    Use User Data Field in GX_WIDGET Structure: No(default)
+    
+  Module "FileX Source"
+    Error Checking: Enabled (default)
+    Max Long Name Len: 
+    Max Last Name Len: 
+    Max Sector Cache: 
+    Fat Map Size: 
+    Max Fat Cache: 
+    Update Rate (Seconds): 
+    No Timer: Disabled (default)
+    Single Thread: Disabled (default)
+    Don't Update Open Files: Disabled (default)
+    Media Search Cache: Enabled (default)
+    Direct Data Read Cache Fill: Enabled (default)
+    Media Statistics: Enabled (default)
+    Single Open Legacy: Disabled (default)
+    Rename Path Inherit: Disabled (default)
+    No Local Path: Disabled (default)
+    Fault Tolerant Data: Disabled (default)
+    Fault Tolerant: Disabled (default)
+    64-bit LBA: Disabled (default)
+    Fault Tolerant Service: Disabled (default)
+    Fault Tolerant Boot Index: 
+    Fault Tolerant Minimal Cluster Size: 
+    
+  Module "ThreadX Source"
+    Error Checking: Enabled (default)
+    Timer Ticks Per Second: 
+    Max Priorities: 
+    Minimum Stack: 
+    Timer Thread Stack Size: 
+    Timer Thread Priority: 
+    Trace Time Mask: 
+    Timer Process In ISR: Enabled (default)
+    Reactivate Inline: Disabled (default)
+    Stack Filling: Enabled (default)
+    Stack Checking: Disabled (default)
+    Preemption Threshold: Disabled (default)
+    Redundant Clearing: Enabled (default)
+    No Timer: Disabled (default)
+    Notify Callbacks: Disabled (default)
+    Inline Thread Resume Suspend: Disabled (default)
+    Not Interruptable: Disabled (default)
+    Event Trace: Disabled (default)
+    Trace Buffer Name: g_tx_trace_buffer
+    Trace Buffer Size: 65536
+    Trace Buffer Number of Registries: 30
+    Block Pool Performance Info: Disabled (default)
+    Byte Pool Performance Info: Disabled (default)
+    Event Flags Performance Info: Disabled (default)
+    Mutex Performance Info: Disabled (default)
+    Queue Performance Info: Disabled (default)
+    Semaphore Performance Info: Disabled (default)
+    Thread Performance Info: Disabled (default)
+    Timer Performance Info: Disabled (default)
+    Hardware Thread Stack Monitoring: Enabled (default)
+    IAR Library Support: Disabled (default)
+    EPK Support: Disabled (default)
+    TX_THREAD_EXTENSION_0: 
+    TX_THREAD_EXTENSION_1: 
+    TX_THREAD_EXTENSION_2: 
+    TX_THREAD_EXTENSION_3: int bsd_errno;
+    TX_BLOCK_POOL_EXTENSION: 
+    TX_BYTE_POOL_EXTENSION: 
+    TX_EVENT_FLAGS_GROUP_EXTENSION: 
+    TX_MUTEX_EXTENSION: 
+    TX_QUEUE_EXTENSION: 
+    TX_SEMAPHORE_EXTENSION: 
+    TX_TIMER_EXTENSION: 
+    TX_THREAD_USER_EXTENSION: 
+    TX_THREAD_CREATE_EXTENSION(thread_ptr): 
+    TX_THREAD_DELETE_EXTENSION(thread_ptr): 
+    TX_THREAD_COMPLETED_EXTENSION(thread_ptr): 
+    TX_THREAD_TERMINATED_EXTENSION(thread_ptr): 
+    TX_BLOCK_POOL_CREATE_EXTENSION(pool_ptr): 
+    TX_BYTE_POOL_CREATE_EXTENSION(pool_ptr): 
+    TX_EVENT_FLAGS_GROUP_CREATE_EXTENSION(group_ptr): 
+    TX_MUTEX_CREATE_EXTENSION(mutex_ptr): 
+    TX_QUEUE_CREATE_EXTENSION(queue_ptr): 
+    TX_SEMAPHORE_CREATE_EXTENSION(semaphore_ptr): 
+    TX_TIMER_CREATE_EXTENSION(timer_ptr): 
+    TX_BLOCK_POOL_DELETE_EXTENSION(pool_ptr): 
+    TX_BYTE_POOL_DELETE_EXTENSION(pool_ptr): 
+    TX_EVENT_FLAGS_GROUP_DELETE_EXTENSION(group_ptr): 
+    TX_MUTEX_DELETE_EXTENSION(mutex_ptr): 
+    TX_QUEUE_DELETE_EXTENSION(queue_ptr): 
+    TX_SEMAPHORE_DELETE_EXTENSION(semaphore_ptr): 
+    TX_TIMER_DELETE_EXTENSION(timer_ptr): 
+    
+  HAL
+    Instance "g_fmi FMI Driver on r_fmi"
+      Name: g_fmi
+      
+    Instance "g_ioport I/O Port Driver on r_ioport"
+      Name [Fixed]: g_ioport
+      
+    Instance "g_cgc CGC Driver on r_cgc"
+      Name [Fixed]: g_cgc
+      
+    Instance "g_elc ELC Driver on r_elc"
+      Name [Fixed]: g_elc
+      
+    Instance "g_pwm_backlight Timer Driver on r_gpt"
+      Name: g_pwm_backlight
+      Channel: 11
+      Mode: PWM
+      Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
+      Period Value: 10
+      Period Unit: Milliseconds
+      Duty Cycle Value: 100
+      Duty Cycle Unit: Unit Percent
+      Auto Start: True
+      GTIOCA Output Enabled: True
+      GTIOCA Stop Level: Pin Level Low
+      GTIOCB Output Enabled: True
+      GTIOCB Stop Level: Pin Level Low
+      Callback: NULL
+      Overflow Interrupt Priority: Disabled
+      
+  Thread "Display Thread"
+    Symbol: display_thread
+    Name: Display Thread
+    Stack size (bytes): 4096
+    Priority: 2
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
+    Instance "g_sf_touch_panel_i2c0 Touch Panel Framework on sf_touch_panel_i2c"
+      Name: g_sf_touch_panel_i2c0
+      Thread Priority: 3
+      Hsize Pixels: 800
+      Vsize Pixels: 480
+      Update Hz: 10
+      Reset Pin: IOPORT_PORT_10_PIN_02
+      Touch Event Class Instance Number: 0
+      Touch Coordinate Rotation Angle(Clockwise): 0
+      Name of generated initialization function: sf_touch_panel_i2c_init0
+      Auto Initialization: Enable
+      
+      Instance "g_sf_message0 Messaging Framework on sf_message"
+        Name: g_sf_message0
+        Work memory size in bytes: 2048
+        Pointer to subscriber list array: p_subscriber_lists
+        Name of the block pool internally used in the messaging framework: sf_msg_blk_pool
+        Name of generated initialization function: sf_message_init0
+        Auto Initialization: Enable
+        
+      Instance "g_i2c0 I2C Master Driver on r_riic"
+        Name: g_i2c0
+        Channel: 1
+        Rate: Fast-mode
+        Slave Address: 0x38
+        Address Mode: 7-Bit
+        Timeout Mode: Short Mode
+        Callback: NULL
+        Receive Interrupt Priority: Priority 2
+        Transmit Interrupt Priority: Priority 2
+        Transmit End Interrupt Priority: Priority 2
+        Error Interrupt Priority: Priority 2
+        
+        Instance "g_transfer0 Transfer Driver on r_dtc Event IIC1 TXI"
+          Name: g_transfer0
+          Mode: Normal
+          Transfer Size: 1 Byte
+          Destination Address Mode: Fixed
+          Source Address Mode: Incremented
+          Repeat Area (Unused in Normal Mode): Source
+          Interrupt Frequency: After all transfers have completed
+          Destination Pointer: NULL
+          Source Pointer: NULL
+          Number of Transfers: 0
+          Number of Blocks (Valid only in Block Mode): 0
+          Activation Source (Must enable IRQ): Event IIC1 TXI
+          Auto Enable: False
+          Callback (Only valid with Software start): NULL
+          ELC Software Event Interrupt Priority: Disabled
+          
+        Instance "g_transfer1 Transfer Driver on r_dtc Event IIC1 RXI"
+          Name: g_transfer1
+          Mode: Normal
+          Transfer Size: 1 Byte
+          Destination Address Mode: Incremented
+          Source Address Mode: Fixed
+          Repeat Area (Unused in Normal Mode): Destination
+          Interrupt Frequency: After all transfers have completed
+          Destination Pointer: NULL
+          Source Pointer: NULL
+          Number of Transfers: 0
+          Number of Blocks (Valid only in Block Mode): 0
+          Activation Source (Must enable IRQ): Event IIC1 RXI
+          Auto Enable: False
+          Callback (Only valid with Software start): NULL
+          ELC Software Event Interrupt Priority: Disabled
+          
+      Instance "g_sf_external_irq0 External IRQ Framework on sf_external_irq"
+        Name: g_sf_external_irq0
+        Event: Semaphore Put
+        
+        Instance "g_external_irq0 External IRQ Driver on r_icu"
+          Name: g_external_irq0
+          Channel: 12
+          Trigger: Falling
+          Digital Filtering: Enabled
+          Digital Filtering Sample Clock (Only valid when Digital Filtering is Enabled): PCLK / 1
+          Interrupt enabled after initialization: True
+          Callback: NULL
+          Pin Interrupt Priority: Priority 3
+          
+      Instance "Touch Panel Driver on touch_panel_ft5x06"
+        Name: g_sf_touch_panel_i2c_chip_ft5x06
+        
+    Instance "GUIX on gx"
+      Instance "g_sf_el_gx0 GUIX Port on sf_el_gx"
+        Name: g_sf_el_gx0
+        Display Driver Configuration Inheritance: Inherit Graphics Screen 1
+        Name of User Callback function: NULL
+        Screen Rotation Angle(Clockwise): 0
+        GUIX Canvas Buffer (required if rotation angle is not zero): Not used
+        Size of JPEG Work Buffer (valid if JPEG hardware acceleration enabled): 1000
+        Memory section for GUIX Canvas Buffer: sdram
+        Memory section for JPEG Work Buffer: sdram
+        D/AVE 2D Frame Buffer Cache(Valid if D/AVE 2D Drawing Engine is enabled): Enable (Default)
+        
+        Instance "g_display0 Display Driver on r_glcd"
+          Name: g_display0
+          Name of display callback function to be defined by user: NULL
+          Input - Panel clock source select: Internal clock(GLCDCLK)
+          Input - Graphics screen1: Used
+          Input - Graphics screen1 frame buffer name: fb_background
+          Input - Number of Graphics screen1 frame buffer: 2
+          Input - Section where Graphics screen1 frame buffer allocated: sdram
+          Input - Graphics screen1 input horizontal size: 800
+          Input - Graphics screen1 input vertical size: 480
+          Input - Graphics screen1 input horizontal stride(not bytes but pixels): 800
+          Input - Graphics screen1 input format: 16bits RGB565
+          Input - Graphics screen1 input line descending: Not used
+          Input - Graphics screen1 input lines repeat: Off
+          Input - Graphics screen1 input lines repeat times: 0
+          Input - Graphics screen1 layer coordinate X: 0
+          Input - Graphics screen1 layer coordinate Y: 0
+          Input - Graphics screen1 layer background color alpha: 255
+          Input - Graphics screen1 layer background color Red: 255
+          Input - Graphics screen1 layer background color Green: 255
+          Input - Graphics screen1 layer background color Blue: 255
+          Input - Graphics screen1 layer fading control: None
+          Input - Graphics screen1 layer fade speed: 0
+          Input - Graphics screen2: Not used
+          Input - Graphics screen2 frame buffer name: fb_foreground
+          Input - Number of Graphics screen2 frame buffer: 2
+          Input - Section where Graphics screen2 frame buffer allocated: sdram
+          Input - Graphics screen2 input horizontal size: 800
+          Input - Graphics screen2 input vertical size: 480
+          Input - Graphics screen2 input horizontal stride(not bytes but pixels): 800
+          Input - Graphics screen2 input format: 16bits RGB565
+          Input - Graphics screen2 line descending: Off
+          Input - Graphics screen2 input lines repeat: Off
+          Input - Graphics screen2 input lines repeat times: 0
+          Input - Graphics screen2 layer coordinate X: 0
+          Input - Graphics screen2 layer coordinate Y: 0
+          Input - Graphics screen2 layer background color alpha: 255
+          Input - Graphics screen2 layer background color Red: 255
+          Input - Graphics screen2 layer background color Green: 255
+          Input - Graphics screen2 layer background color Blue: 255
+          Input - Graphics screen2 layer fading control: None
+          Input - Graphics screen2 layer fade speed: 0
+          Output - Horizontal total cycles: 1024
+          Output - Horizontal active video cycles: 800
+          Output - Horizontal back porch cycles: 46
+          Output - Horizontal sync signal cycles: 20
+          Output - Horizontal sync signal polarity: Low active
+          Output - Vertical total lines: 525
+          Output - Vertical active video lines: 480
+          Output - Vertical back porch lines: 23
+          Output - Vertical sync signal lines: 10
+          Output - Vertical sync signal polarity: Low active
+          Output - Format: 24bits RGB888
+          Output - Endian: Little endian
+          Output - Color order: RGB
+          Output - Data Enable Signal Polarity: High active
+          Output - Sync edge: Rising edge
+          Output - Background color alpha channel: 255
+          Output - Background color R channel: 0
+          Output - Background color G channel: 0
+          Output - Background color B channel: 0
+          CLUT: Not used
+          CLUT - CLUT buffer size: 256
+          TCON - Hsync pin select: LCD_TCON0
+          TCON - Vsync pin select: LCD_TCON1
+          TCON - DataEnable pin select: LCD_TCON2
+          TCON - Panel clock division ratio: 1/8
+          Color correction - Brightness: Off
+          Color correction - Brightness R channel: 512
+          Color correction - Brightness G channel: 512
+          Color correction - Brightness B channel: 512
+          Color correction - Contrast: Off
+          Color correction - Contrast(gain) R channel: 128
+          Color correction - Contrast(gain) G channel: 128
+          Color correction - Contrast(gain) B channel: 128
+          Color correction - Gamma correction(Red): Off
+          Color correction - Gamma gain R[0]: 0
+          Color correction - Gamma gain R[1]: 0
+          Color correction - Gamma gain R[2]: 0
+          Color correction - Gamma gain R[3]: 0
+          Color correction - Gamma gain R[4]: 0
+          Color correction - Gamma gain R[5]: 0
+          Color correction - Gamma gain R[6]: 0
+          Color correction - Gamma gain R[7]: 0
+          Color correction - Gamma gain R[8]: 0
+          Color correction - Gamma gain R[9]: 0
+          Color correction - Gamma gain R[10]: 0
+          Color correction - Gamma gain R[11]: 0
+          Color correction - Gamma gain R[12]: 0
+          Color correction - Gamma gain R[13]: 0
+          Color correction - Gamma gain R[14]: 0
+          Color correction - Gamma gain R[15]: 0
+          Color correction - Gamma threshold R[0]: 0
+          Color correction - Gamma threshold R[1]: 0
+          Color correction - Gamma threshold R[2]: 0
+          Color correction - Gamma threshold R[3]: 0
+          Color correction - Gamma threshold R[4]: 0
+          Color correction - Gamma threshold R[5]: 0
+          Color correction - Gamma threshold R[6]: 0
+          Color correction - Gamma threshold R[7]: 0
+          Color correction - Gamma threshold R[8]: 0
+          Color correction - Gamma threshold R[9]: 0
+          Color correction - Gamma threshold R[10]: 0
+          Color correction - Gamma threshold R[11]: 0
+          Color correction - Gamma threshold R[12]: 0
+          Color correction - Gamma threshold R[13]: 0
+          Color correction - Gamma threshold R[14]: 0
+          Color correction - Gamma threshold R[15]: 0
+          Color correction - Gamma correction(Green): Off
+          Color correction - Gamma gain G[0]: 0
+          Color correction - Gamma gain G[1]: 0
+          Color correction - Gamma gain G[2]: 0
+          Color correction - Gamma gain G[3]: 0
+          Color correction - Gamma gain G[4]: 0
+          Color correction - Gamma gain G[5]: 0
+          Color correction - Gamma gain G[6]: 0
+          Color correction - Gamma gain G[7]: 0
+          Color correction - Gamma gain G[8]: 0
+          Color correction - Gamma gain G[9]: 0
+          Color correction - Gamma gain G[10]: 0
+          Color correction - Gamma gain G[11]: 0
+          Color correction - Gamma gain G[12]: 0
+          Color correction - Gamma gain G[13]: 0
+          Color correction - Gamma gain G[14]: 0
+          Color correction - Gamma gain G[15]: 0
+          Color correction - Gamma threshold G[0]: 0
+          Color correction - Gamma threshold G[1]: 0
+          Color correction - Gamma threshold G[2]: 0
+          Color correction - Gamma threshold G[3]: 0
+          Color correction - Gamma threshold G[4]: 0
+          Color correction - Gamma threshold G[5]: 0
+          Color correction - Gamma threshold G[6]: 0
+          Color correction - Gamma threshold G[7]: 0
+          Color correction - Gamma threshold G[8]: 0
+          Color correction - Gamma threshold G[9]: 0
+          Color correction - Gamma threshold G[10]: 0
+          Color correction - Gamma threshold G[11]: 0
+          Color correction - Gamma threshold G[12]: 0
+          Color correction - Gamma threshold G[13]: 0
+          Color correction - Gamma threshold G[14]: 0
+          Color correction - Gamma threshold G[15]: 0
+          Color correction - Gamma correction(Blue): Off
+          Color correction - Gamma gain B[0]: 0
+          Color correction - Gamma gain B[1]: 0
+          Color correction - Gamma gain B[2]: 0
+          Color correction - Gamma gain B[3]: 0
+          Color correction - Gamma gain B[4]: 0
+          Color correction - Gamma gain B[5]: 0
+          Color correction - Gamma gain B[6]: 0
+          Color correction - Gamma gain B[7]: 0
+          Color correction - Gamma gain B[8]: 0
+          Color correction - Gamma gain B[9]: 0
+          Color correction - Gamma gain B[10]: 0
+          Color correction - Gamma gain B[11]: 0
+          Color correction - Gamma gain B[12]: 0
+          Color correction - Gamma gain B[13]: 0
+          Color correction - Gamma gain B[14]: 0
+          Color correction - Gamma gain B[15]: 0
+          Color correction - Gamma threshold B[0]: 0
+          Color correction - Gamma threshold B[1]: 0
+          Color correction - Gamma threshold B[2]: 0
+          Color correction - Gamma threshold B[3]: 0
+          Color correction - Gamma threshold B[4]: 0
+          Color correction - Gamma threshold B[5]: 0
+          Color correction - Gamma threshold B[6]: 0
+          Color correction - Gamma threshold B[7]: 0
+          Color correction - Gamma threshold B[8]: 0
+          Color correction - Gamma threshold B[9]: 0
+          Color correction - Gamma threshold B[10]: 0
+          Color correction - Gamma threshold B[11]: 0
+          Color correction - Gamma threshold B[12]: 0
+          Color correction - Gamma threshold B[13]: 0
+          Color correction - Gamma threshold B[14]: 0
+          Color correction - Gamma threshold B[15]: 0
+          Dithering: Off
+          Dithering - Mode: Truncate
+          Dithering - Pattern A: Pattern 11
+          Dithering - Pattern B: Pattern 11
+          Dithering - Pattern C: Pattern 11
+          Dithering - Pattern D: Pattern 11
+          Misc - Correction Process Order: Brightness and Contrast then Gamma
+          Line Detect Interrupt Priority: Priority 5
+          Underflow 1 Interrupt Priority: Priority 5
+          Underflow 2 Interrupt Priority: Disabled
+          
+        Instance "g_sf_jpeg_decode0 JPEG Decode Framework on sf_jpeg_decode"
+          Name: g_sf_jpeg_decode0
+          
+          Instance "g_jpeg_decode0 JPEG Decode Driver on r_jpeg_decode"
+            Name: g_jpeg_decode0
+            Byte Order for Input Data Format: Normal byte order (1)(2)(3)(4)(5)(6)(7)(8)
+            Byte Order for Output Data Format: Normal byte order (1)(2)(3)(4)(5)(6)(7)(8)
+            Output Data Color Format: Pixel Data RGB565 format
+            Alpha value to be applied to decoded pixel data(only valid for ARGB8888 format): 255
+            Name of user callback function: NULL
+            Decompression Interrupt Priority: Priority 5
+            Data Transfer Interrupt Priority: Priority 5
+            
+            Instance "g_jpeg_common0 JPEG Common"
+              Name: g_jpeg_common0
+              
+        Instance "D/AVE 2D Driver on dave2d"
+          Instance "D/AVE 2D Port on sf_tes_2d_drw"
+      Instance "GUIX Source"
+        Show linkage warning: Disabled
+        
+    Object "g_display_event_flags Event Flags"
+      Name: Display Event Flags
+      Symbol: g_display_event_flags
+      
+  Thread "SDMMC Thread"
+    Symbol: sdmmc_thread
+    Name: SDMMC Thread
+    Stack size (bytes): 4096
+    Priority: 1
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
+    Instance "g_fx_media0 FileX on Block Media"
+      Name: g_fx_media0
+      Format media during initialization: Disabled
+      File System is on block media: True
+      Formatting Options: 
+          Volume Name: Volume 1
+          Number of FATs: 1
+          Directory Entries: 256
+          Hidden Sectors: 0
+          Total Sectors: 3751936
+          Bytes per Sector: 512
+          Sectors per Cluster: 1
+      Working media memory size: 512
+      Name of generated initialization function: fx_media_init0
+      Auto Initialization: Disable
+      
+      Instance "g_sf_el_fx0 FileX Port Block Media Framework on sf_el_fx"
+        Name: g_sf_el_fx0
+        
+        Instance "g_sf_block_media_sdmmc0 Block Media Framework on sf_block_media_sdmmc"
+          Name: g_sf_block_media_sdmmc0
+          Block size of media in bytes: 512
+          
+          Instance "g_sdmmc0 SD/MMC Driver on r_sdmmc"
+            Name: g_sdmmc0
+            Channel: 1
+            Media Type: Embedded
+            Bus Width: 4 Bits
+            Block Size: 512
+            Card Detection: Not Used
+            Write Protection: Not Used
+            Callback: NULL
+            Access Interrupt Priority: Priority 3
+            Card Interrupt Priority: Priority 3
+            DTC Interrupt Priority: Disabled
+            
+            Instance "g_transfer_sdmmc Transfer Driver on r_dmac Software Activation"
+              Name: g_transfer_sdmmc
+              Channel: 0
+              Mode: Normal
+              Transfer Size: 1 Byte
+              Destination Address Mode: Fixed
+              Source Address Mode: Incremented
+              Repeat Area (Unused in Normal Mode): Source
+              Destination Pointer: NULL
+              Source Pointer: NULL
+              Number of Transfers: 0
+              Number of Blocks (Valid only in Repeat and Block Mode): 0
+              Activation Source: Software Activation
+              Auto Enable: False
+              Callback: NULL
+              Transfer End Interrupt Priority: Priority 4
+              
+      Instance "FileX Common on fx"
+        Name of generated initialization function: fx_common_init0
+        Auto Initialization: Enable
+        
+        Instance "FileX Source"
+          Show linkage warning: Enabled
+          
+          Instance "ThreadX Source"
+            Show linkage warning: Enabled
+            
+    Instance "g_ux_device_class_storage USBX Device Class Mass Storage"
+      Name: g_ux_device_class_storage
+      Mass Storage Class Parameter Setup: Auto (Simple Auto Setup if LUN is 1)
+      User Setup Callback (Only valid if Parameter Setup is Auto): ux_device_class_storage_user_setup
+      Last LBA of Storage Media (Only valid if Parameter Setup is Auto): 3751935
+      Bytes Per Sector of Storage Media (Only valid if Parameter Setup is Auto): 512
+      Type of Storage Media (Only valid if Parameter Setup is Auto): 0
+      Removable Flag of Storage Media (Only valid if Parameter Setup is Auto): 0x80
+      Media Read Function Callback (Only valid if Parameter Setup is Auto): ux_device_msc_media_read
+      Media Write Function Callback (Only valid if Parameter Setup is Auto): ux_device_msc_media_write
+      Media Status Function Callback (Only valid if Parameter Setup is Auto): ux_device_msc_media_status
+      USBX Device Storage Instance Activate Callback Function: ux_device_msc_media_activate
+      USBX Device Storage Instance Deactivate Callback Function: ux_device_msc_media_deactivate
+      Name of generated initialization function: ux_device_class_storage_init0
+      Auto Initialization: Enable
+      
+      Instance "USBX Device Configuration"
+        Vendor ID: 0x045B
+        Product ID: 0x0001
+        Device Release Number: 0x0000
+        Index of Manufacturer String Descriptor: 0x00
+        Index of Product String Descriptor: 0x00
+        Index of Serial Number String Descriptor: 0x00
+        Class Code: Mass Storage
+        Index of String Descriptor describing this configuration: 0x00
+        Size of USB Descriptor in bytes for this configuration (Modify this value only for Vendor-specific Class, otherwise set zero): 0x00
+        Number of Interfaces (Modify this value only for Vendor-specific Class, otherwise set zero): 0x00
+        Self-Powered: Enable
+        Remote Wakeup: Disable
+        Maximum Power Consumption (in 2mA units): 50
+        Supported Language Code: 0x0409
+        Name of USBX String Framework: NULL
+        Total index number of USB String Descriptors in USBX String Framework: 0
+        Name of USBX Language Framework: NULL
+        Number of Languages to support (US English is applied if zero is set): 0
+        Name of generated initialization function: ux_device_init0
+        Auto Initialization: Enable
+        
+        Instance "g_sf_el_ux_dcd_fs_0 USBX Port DCD on sf_el_ux for USBFS"
+          Name: g_sf_el_ux_dcd_fs_0
+          USB Controller Selection: USBFS
+          
+        Instance "USBX on ux"
+          USBX Pool Memory Name: g_ux_pool_memory
+          USBX Pool Memory Size: 65536
+          User Callback for Host Event Notification(Only valid for USB Host): NULL
+          Name of generated initialization function: ux_common_init0
+          Auto Initialization: Enable
+          
+      Instance "g_usb_interface_descriptor_storage_0 USBX Interface Configuration Mass Storage Class"
+        Name: g_usb_interface_descriptor_storage_0
+        Interface Number of Bulk-Only Data Interface: 0x00
+        Endpoint Number to be used for Bulk Out transfer: Endpoint 1
+        Endpoint Number to be used for Bulk In transfer: Endpoint 2
+        
+    Object "g_storage_event_flags Event Flags"
+      Name: New Event Flags
+      Symbol: g_storage_event_flags
+      
+  Messaging
+    Event Class "Media"
+      Symbol: SF_MESSAGE_EVENT_CLASS_MEDIA
+      Name: Media
+      Payload header file: media_api.h
+      Payload: media_payload
+      Payload type: media_payload_t
+      
+    Event Class "Display"
+      Symbol: SF_MESSAGE_EVENT_CLASS_DISPLAY
+      Name: Display
+      Payload header file: display_api.h
+      Payload: display_payload
+      Payload type: display_payload_t
+      
+    Subscriber "Display Thread" 0 0
+      Event Class "Touch"
+      Event Class "Media"
+      
+    Subscriber "SDMMC Thread" 0 0
+      Event Class "Display"
+      

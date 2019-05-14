@@ -1,0 +1,9 @@
+.*.swp
+*.o
+*.zip
+**/synergy
+**/synergy_cfg
+**/src/synergy_gen
+**/Debug
+**/.module_descriptions
+**/.settings
